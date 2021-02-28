@@ -1,5 +1,5 @@
 {% set name = "dlpoly-py" %}
-{% set version = "0.1.4" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 80ec23a140bd0f8f52c3dabdac7e986da1c843bdcc689f03893350859aa69ef6
+  sha256: 745cb8a217c1b4156cc90d84fe5a1896242644b5adcf0b1f30c63ed4778409bf
 
 build:
   noarch: python
-  number: 1
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -40,7 +40,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'dlpoly4 python module for file manipulation'
+  summary: dlpoly4 python module for file manipulation
   description: |
     dlpoly-py contains tools to read input and output for DL_POLY it can 
     also produce inputs and be mixed with other python packages like ASE, 
