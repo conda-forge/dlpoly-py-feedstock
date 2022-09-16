@@ -1,5 +1,5 @@
 {% set name = "dlpoly-py" %}
-{% set version = "0.3.4" %}
+{% set version = "0.3.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c0ee2fb76a80ebdae356417e5a9bab3784839341103ed59feaa77386fe3b39ba
+  sha256: 258f3f965f440bc4ca869c6f60bb41584fd54366cd4ae8d5221123aa05926ad4
 
 build:
   noarch: python
