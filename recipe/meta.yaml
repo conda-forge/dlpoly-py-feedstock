@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 24148eb637549b5dc6b4047332042f99a6dc661fcde07a8da780e6ef7e27f3cb
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - sphinx
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - numpy >=1.5.0
     - matplotlib-base >=2.0.0
     - flake8
@@ -32,6 +32,8 @@ requirements:
     - sphinx
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - dlpoly
 
